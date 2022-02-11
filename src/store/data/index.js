@@ -21,9 +21,11 @@ export default {
         parseData({commit, state}) {
             let data = state.data;
 
-            let total_like = 0;
-            let total_retweet = 0;
-            let total_comment = 0;
+            // let nb_tweet = 0
+            //
+            // let total_like = 0;
+            // let total_retweet = 0;
+            // let total_comment = 0;
 
             // let max_num_like = 0;
             // let max_num_retweet = 0;
@@ -32,10 +34,11 @@ export default {
 
             for(let i in data){
                 console.log(data[i]);
-
-                total_like += data[i].like;
-                total_retweet += data[i].retweet;
-                total_comment += data[i].comment;
+                // nb_tweet += 1;
+                //
+                // total_like += data[i].like;
+                // total_retweet += data[i].retweet;
+                // total_comment += data[i].comment;
 
                 // Find tweet with max like retweet comment
                 // if(max_num_like < data[i].like) {

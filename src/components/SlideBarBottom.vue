@@ -1,26 +1,26 @@
 <template lang="html">
     <div id="slideBarBottom">
         <div class="items">
-            <i class="fas fa-jedi"></i>
+            <i class="fas fa-heart"></i>
             <div class="content">
-                <span>du text long</span>
-                <p>54 672 $</p>
+                <span>Total Like</span>
+                <p>333</p>
             </div>
         </div>
 
         <div class="items">
-            <i class="fab fa-old-republic"></i>
+            <i class="fas fa-retweet"></i>
             <div class="content">
-                <span>du text long</span>
+                <span>Total Retweet</span>
                 <p>1877</p>
             </div>
         </div>
 
         <div class="items">
-            <i class="fab fa-galactic-republic"></i>
+            <i class="fas fa-comments"></i>
             <div class="content">
-                <span>du text long</span>
-                <p>445 %</p>
+                <span>Total Comment</span>
+                <p>999</p>
             </div>
         </div>
     </div>
