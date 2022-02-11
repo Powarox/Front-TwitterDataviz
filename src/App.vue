@@ -21,11 +21,22 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex';
+
     export default {
         name: 'App',
         components: {
 
-        }
+        },
+        created() {
+            this.fetchData();
+            this.parseData();
+        },
+        methods: {
+            ...mapActions([
+                'fetchData', 'parseData',
+            ]),
+        },
     }
 </script>
 
