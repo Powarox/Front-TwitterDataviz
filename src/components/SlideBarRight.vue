@@ -1,12 +1,12 @@
 <template lang="html">
     <div id="slideBarRight">
-        <div class="slide">
+        <div class="slide special">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  laborum.</p>
         </div>
         <div class="slide">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim d minim veniam, quis nostrud  laborum.</p>
         </div>
-        <div class="slide">
+        <div class="slide special">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim d minim veniam, quis nostrud  laborum.</p>
         </div>
     </div>
@@ -30,5 +30,10 @@
         background: #FFF;
         box-shadow: 5px 10px 20px #D9D5EC;
         border-radius: 10px;
+    }
+
+    .special {
+        color: #DDD;
+        background: #8674FE;
     }
 </style>

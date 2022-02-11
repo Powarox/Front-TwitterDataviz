@@ -7,7 +7,7 @@
             <div class="circle">
 
             </div>
-            
+
             <SlideBarBottom/>
         </main>
 
@@ -38,7 +38,7 @@
     }
 
     .center {
-        height: 600px;
+        height: 84vh;
         padding: 10px 0;
         display: flex;
         flex-direction: column;
