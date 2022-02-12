@@ -22,6 +22,14 @@ export default {
             let data = state.data;
             console.log(data);
 
+            // Content: "Big Up Legend…😉 https://t.co/7jI4obAd1Y"
+            // Like: 290370
+            // ReplyCount: 1889
+            // Retweet: 23757
+            // TweetQuote: 1614
+            // Username: "KMbappe"
+            // id: 1492268658038644700
+
             // let nb_tweet = 0
             //
             // let total_like = 0;

@@ -16,17 +16,21 @@
 </template>
 
 <script>
-    import SlideBarLeft from '../components/SlideBarLeft';
-    import SlideBarRight from '../components/SlideBarRight';
-    import SlideBarBottom from '../components/SlideBarBottom';
-
+    import { mapGetters } from 'vuex'
+    import SlideBarLeft from '../components/slidebar/SlideBarLeft';
+    import SlideBarRight from '../components/slidebar/SlideBarRight';
+    import SlideBarBottom from '../components/slidebar/SlideBarBottom';
     import ApexRadialChart from '../components/charts/ApexRadialChart';
-
 
     export default {
         name: 'Home',
         components: {
             SlideBarLeft, SlideBarRight, SlideBarBottom, ApexRadialChart,
+        },
+        methods: {
+            ...mapGetters([
+                'getData',
+            ]),
         }
     }
 </script>
