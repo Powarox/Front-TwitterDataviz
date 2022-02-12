@@ -45,5 +45,7 @@
 </script>
 
 <style lang="css" scoped>
-
+    #apexRadialChart {
+        
+    }
 </style>
