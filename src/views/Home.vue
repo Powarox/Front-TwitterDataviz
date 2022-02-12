@@ -8,7 +8,7 @@
                 <ApexRadialChart/>
             </div>
 
-            <SlideBarBottom/>
+            <SlideBarBottom :total-count="totalCount"/>
         </main>
 
         <SlideBarRight/>
@@ -29,8 +29,22 @@
         },
         methods: {
             ...mapGetters([
-                'getData',
+                'getTotalCount', 'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment'
             ]),
+        },
+        computed: {
+            totalCount() {
+                return this.getTotalCount;
+            },
+            tweetMaxLike() {
+                return this.getTweetMaxLike;
+            },
+            tweetMaxRetweet() {
+                return this.getTweetMaxRetweet;
+            },
+            tweetMaxComment() {
+                return this.getTweetMaxComment;
+            },
         }
     }
 </script>

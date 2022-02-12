@@ -6,63 +6,68 @@ export default {
             data: {},
             total: {},
             max: {},
+
+            total_count: {},
+
+            tweet_max_like: {},
+            tweet_max_retweet: {},
+            tweet_max_comment: {},
         }
     },
     getters: {
         getData(state) {
             return state.feedback;
         },
+        getTotalCount(state) {
+            return state.total_count;
+        },
+        getTweetMaxLike(state) {
+            return state.tweet_max_like;
+        },
+        getTweetMaxRetweet(state) {
+            return state.tweet_max_retweet;
+        },
+        getTweetMaxComment(state) {
+            return state.tweet_max_comment;
+        },
     },
     actions: {
         fetchData({commit}) {
             let data = localJsonData;
+            console.log(data);
             commit('UPDATEDATA', data);
         },
         parseData({commit, state}) {
-            let data = state.data;
-            console.log(data);
+            let total_count = {};
+            let max_value_number = {};
 
-            // Content: "Big Up Legend…😉 https://t.co/7jI4obAd1Y"
-            // Like: 290370
-            // ReplyCount: 1889
-            // Retweet: 23757
-            // TweetQuote: 1614
-            // Username: "KMbappe"
-            // id: 1492268658038644700
+            max_value_number['like'] = 0;
+            max_value_number['retweet'] = 0;
+            max_value_number['comment'] = 0;
 
-            // let nb_tweet = 0
-            //
-            // let total_like = 0;
-            // let total_retweet = 0;
-            // let total_comment = 0;
+            for(let i in state.data){
+                total_count['tweet'] += 1;
+                total_count['like'] += state.data[i].Like;
+                total_count['retweet'] += state.data[i].Retweet;
+                total_count['comment'] += state.data[i].ReplyCount;
+                total_count['quote'] += state.data[i].TweetQuote;
 
-            // let max_num_like = 0;
-            // let max_num_retweet = 0;
-            // let max_num_comment = 0;
-            // let current_tweet = {}
+                // Find tweet with max like retweet comment
+                if(max_value_number['like'] < state.data[i].like) {
+                    max_value_number['like'] = state.data[i].like;
+                    state.tweet_max_like = state.data[i];
+                }
+                if(max_value_number['retweet'] < state.data[i].retweet) {
+                    max_value_number['retweet'] = state.data[i].retweet;
+                    state.tweet_max_retweet = state.data[i];
+                }
+                if(max_value_number['comment'] < state.data[i].comment) {
+                    max_value_number['comment'] = state.data[i].comment;
+                    state.tweet_max_comment = state.data[i];
+                }
+            }
 
-            // for(let i in data){
-            //     console.log(data[i]);
-            //     // nb_tweet += 1;
-            //     //
-            //     // total_like += data[i].like;
-            //     // total_retweet += data[i].retweet;
-            //     // total_comment += data[i].comment;
-            //
-            //     // Find tweet with max like retweet comment
-            //     // if(max_num_like < data[i].like) {
-            //     //     max_num_like = data[i].like;
-            //     //     current_tweet = data[i];
-            //     // }
-            //     // if(max_num_retweet < data[i].retweet) {
-            //     //     max_num_retweet = data[i].retweet;
-            //     // }
-            //     // if(max_num_comment < data[i].comment) {
-            //     //     max_num_comment = data[i].comment;
-            //     // }
-            // }
-
-            commit('PARSEDATA', data);
+            commit('PARSEDATA', total_count);
         },
     },
     mutations: {
@@ -70,8 +75,8 @@ export default {
             state.data = data;
             console.log(state.data);
         },
-        PARSEDATA(state, data) {
-            state.parse = data;
+        PARSEDATA(state, total_count) {
+            state.total_count = total_count;
         },
     }
 }
