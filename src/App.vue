@@ -56,6 +56,7 @@
 
     #app {
         display: grid;
+        color: #425486;
         font-family: 'Cabin', sans-serif;
     }
 

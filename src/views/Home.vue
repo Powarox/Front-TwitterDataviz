@@ -56,7 +56,7 @@
     #home {
         padding: 30px;
         display: grid;
-        grid-template-columns: 200px 1fr 200px;
+        grid-template-columns: 250px 1fr 250px;
         grid-gap: 35px;
         background: #FAFAFA;
     }
