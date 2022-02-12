@@ -10,7 +10,7 @@
     export default {
         name: 'ApexRadialChart',
         mounted() {
-            let optionsRadial = {
+            let options = {
                 series: [44, 55, 67, 83],
                 chart: {
                     height: 350,
@@ -38,7 +38,7 @@
                 labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
             };
 
-            let chartRadial = new ApexCharts(document.querySelector("#apexRadialChart"), optionsRadial);
+            let chartl = new ApexCharts(document.querySelector("#apexRadialChart"), options);
             chartRadial.render();
         },
     }
@@ -46,6 +46,6 @@
 
 <style lang="css" scoped>
     #apexRadialChart {
-        
+
     }
 </style>
