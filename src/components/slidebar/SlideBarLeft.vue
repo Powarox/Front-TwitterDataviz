@@ -1,7 +1,8 @@
 <template lang="html">
     <div id="slideBarRight">
-        <div class="slide">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  laborum</p>
+        <div class="slide charts">
+            <ApexBarChart/>
+            <!-- <ApexLineChart/> -->
         </div>
         <div class="slide tweet">
             <h3>Most Liked Tweet</h3>
@@ -42,9 +43,15 @@
 </template>
 
 <script>
+    import ApexBarChart from '../charts/ApexBarChart'
+    // import ApexLineChart from '../charts/ApexLineChart'
+
     export default {
         name: 'SlideBarRight',
         props: ['tweetMaxLike', 'tweetMaxRetweet', 'tweetMaxComment'],
+        components: {
+            ApexBarChart, /*ApexLineChart,*/
+        }
     }
 </script>
 
@@ -60,6 +67,11 @@
         background: #FFF;
         box-shadow: 5px 10px 20px #D9D5EC;
         border-radius: 10px;
+    }
+
+    .charts div {
+        box-sizing: border-box;
+        height: 100px;
     }
 
     .tweet {

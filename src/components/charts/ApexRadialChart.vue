@@ -38,8 +38,8 @@
                 labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
             };
 
-            let chartl = new ApexCharts(document.querySelector("#apexRadialChart"), options);
-            chartRadial.render();
+            let chart = new ApexCharts(document.querySelector("#apexRadialChart"), options);
+            chart.render();
         },
     }
 </script>

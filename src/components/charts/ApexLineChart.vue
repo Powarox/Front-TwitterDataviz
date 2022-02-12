@@ -19,14 +19,14 @@
                     data: [11, 32, 45, 32, 34, 52, 41]
                 }],
                 chart: {
-                    height: 350,
+                    // height: 350,
                     type: 'area'
                 },
                 dataLabels: {
                     enabled: false
                 },
                 stroke: {
-                    curve: 'smooth'
+                    // curve: 'smooth'
                 },
                 xaxis: {
                     type: 'datetime',
@@ -41,7 +41,6 @@
 
             let chart = new ApexCharts(document.querySelector("#apexLineChart"), options);
             chart.render();
-
         },
     }
 </script>
