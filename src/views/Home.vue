@@ -1,6 +1,9 @@
 <template lang="html">
     <div id="home">
-        <SlideBarLeft/>
+        <SlideBarLeft
+            :tweet-max-like="tweetMaxLike()"
+            :tweet-max-retweet="tweetMaxRetweet()"
+            :tweet-max-comment="tweetMaxComment()"/>
 
         <main class="center">
             <h1>Data Visualisation</h1>
@@ -8,7 +11,7 @@
                 <ApexRadialChart/>
             </div>
 
-            <SlideBarBottom :total-count="totalCount"/>
+            <SlideBarBottom :total-count="totalCount()"/>
         </main>
 
         <SlideBarRight/>
@@ -16,7 +19,7 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
+    import { mapGetters } from 'vuex';
     import SlideBarLeft from '../components/slidebar/SlideBarLeft';
     import SlideBarRight from '../components/slidebar/SlideBarRight';
     import SlideBarBottom from '../components/slidebar/SlideBarBottom';
@@ -30,7 +33,7 @@
         methods: {
             ...mapGetters([
                 'getTotalCount', 'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment'
-            ]),
+            ])
         },
         computed: {
             totalCount() {

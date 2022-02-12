@@ -4,7 +4,7 @@
             <i class="fas fa-heart"></i>
             <div class="content">
                 <span>Total Like</span>
-                <p>333</p>
+                <p>{{ this.totalCount.like.toLocaleString('fr-FR') }}</p>
             </div>
         </div>
 
@@ -12,7 +12,7 @@
             <i class="fas fa-retweet"></i>
             <div class="content">
                 <span>Total Retweet</span>
-                <p>1877</p>
+                <p>{{ this.totalCount.retweet.toLocaleString('fr-FR') }}</p>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <div class="content">
                 <span>Total Comment</span>
                 <!-- <span>Total Tweet</span> -->
-                <p>999</p>
+                <p>{{ this.totalCount.comment.toLocaleString('fr-FR') }}</p>
             </div>
         </div>
     </div>
@@ -31,6 +31,12 @@
 <script>
     export default {
         name: 'SlideBarBottom',
+        props: ['totalCount'],
+        methods: {
+            test() {
+                console.log(this.totalCount);
+            }
+        }
     }
 </script>
 
