@@ -5,7 +5,7 @@
         <main class="center">
             <h1>Data Visualisation</h1>
             <div class="circle">
-
+                <ApexRadialChart/>
             </div>
 
             <SlideBarBottom/>
@@ -20,10 +20,13 @@
     import SlideBarRight from '../components/SlideBarRight';
     import SlideBarBottom from '../components/SlideBarBottom';
 
+    import ApexRadialChart from '../components/charts/ApexRadialChart';
+
+
     export default {
         name: 'Home',
         components: {
-            SlideBarLeft, SlideBarRight, SlideBarBottom,
+            SlideBarLeft, SlideBarRight, SlideBarBottom, ApexRadialChart,
         }
     }
 </script>
@@ -56,6 +59,9 @@
     .center .circle {
         width: 400px;
         height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 20px solid #F2F6FE;
         border-radius: 50%;
     }

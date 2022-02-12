@@ -18,8 +18,10 @@
 
         <div class="items">
             <i class="fas fa-comments"></i>
+            <!-- <i class="fab fa-twitter"></i> -->
             <div class="content">
                 <span>Total Comment</span>
+                <!-- <span>Total Tweet</span> -->
                 <p>999</p>
             </div>
         </div>

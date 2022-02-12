@@ -20,6 +20,7 @@ export default {
         },
         parseData({commit, state}) {
             let data = state.data;
+            console.log(data);
 
             // let nb_tweet = 0
             //
@@ -32,26 +33,26 @@ export default {
             // let max_num_comment = 0;
             // let current_tweet = {}
 
-            for(let i in data){
-                console.log(data[i]);
-                // nb_tweet += 1;
-                //
-                // total_like += data[i].like;
-                // total_retweet += data[i].retweet;
-                // total_comment += data[i].comment;
-
-                // Find tweet with max like retweet comment
-                // if(max_num_like < data[i].like) {
-                //     max_num_like = data[i].like;
-                //     current_tweet = data[i];
-                // }
-                // if(max_num_retweet < data[i].retweet) {
-                //     max_num_retweet = data[i].retweet;
-                // }
-                // if(max_num_comment < data[i].comment) {
-                //     max_num_comment = data[i].comment;
-                // }
-            }
+            // for(let i in data){
+            //     console.log(data[i]);
+            //     // nb_tweet += 1;
+            //     //
+            //     // total_like += data[i].like;
+            //     // total_retweet += data[i].retweet;
+            //     // total_comment += data[i].comment;
+            //
+            //     // Find tweet with max like retweet comment
+            //     // if(max_num_like < data[i].like) {
+            //     //     max_num_like = data[i].like;
+            //     //     current_tweet = data[i];
+            //     // }
+            //     // if(max_num_retweet < data[i].retweet) {
+            //     //     max_num_retweet = data[i].retweet;
+            //     // }
+            //     // if(max_num_comment < data[i].comment) {
+            //     //     max_num_comment = data[i].comment;
+            //     // }
+            // }
 
             commit('PARSEDATA', data);
         },
