@@ -1,9 +1,12 @@
-import localJsonData from '../../data/data.json'
+import localJsonData from '../../data/data.json';
+import localJsonEmoji from '../../data/emoji.json';
 
 export default {
     state() {
         return {
             data: {},
+            emoji: {},
+
             total_count: {},
             tweet_max_like: {},
             tweet_max_retweet: {},
@@ -15,7 +18,7 @@ export default {
             return state.feedback;
         },
         getTotalCount(state) {
-            console.log(state.total_count);
+            // console.log(state.total_count);
             return state.total_count;
         },
         getTweetMaxLike(state) {
@@ -31,8 +34,8 @@ export default {
     actions: {
         fetchData({commit}) {
             let data = localJsonData;
-            console.log(data);
-            commit('UPDATEDATA', data);
+            let emoji = localJsonEmoji;
+            commit('UPDATEDATA', [data, emoji]);
         },
         parseData({commit, state}) {
             let total_count = {};
@@ -55,7 +58,6 @@ export default {
                 total_count['retweet'] += state.data[i].Retweet;
                 total_count['comment'] += state.data[i].ReplyCount;
 
-                // Find tweet with max like retweet comment
                 if(max_value_number['like'] < state.data[i].Like) {
                     max_value_number['like'] = state.data[i].Like;
                     state.tweet_max_like = state.data[i];
@@ -70,15 +72,14 @@ export default {
                 }
             }
 
-            console.log(state.tweet_max_retweet);
-
             commit('PARSEDATA', total_count);
         },
     },
     mutations: {
         UPDATEDATA(state, data) {
-            state.data = data;
-            console.log(state.data);
+            console.log(data);
+            state.data = data[0];
+            state.emoji = data[1];
         },
         PARSEDATA(state, total_count) {
             state.total_count = total_count;

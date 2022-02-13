@@ -1,7 +1,5 @@
 <template lang="html">
-    <div id="apexRadialChart">
-
-    </div>
+    <div id="apexRadialChart"></div>
 </template>
 
 <script>
@@ -9,6 +7,7 @@
 
     export default {
         name: 'ApexRadialChart',
+        props: ['id'],
         mounted() {
             let options = {
                 series: [44, 55, 67, 83],
@@ -38,7 +37,7 @@
                 labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
             };
 
-            let chart = new ApexCharts(document.querySelector("#apexRadialChart"), options);
+            let chart = new ApexCharts(document.querySelector("#" + this.id), options);
             chart.render();
         },
     }

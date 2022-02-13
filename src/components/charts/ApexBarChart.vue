@@ -1,7 +1,5 @@
 <template lang="html">
-    <div id="apexBarChart">
-
-    </div>
+    <div id="apexBarChart"></div>
 </template>
 
 <script>
@@ -9,6 +7,7 @@
 
     export default {
         name: 'ApexBarChart',
+        props: ['id'],
         mounted() {
             let options = {
                 series: [{
@@ -60,7 +59,7 @@
                 }
             };
 
-            let chart = new ApexCharts(document.querySelector("#apexBarChart"), options);
+            let chart = new ApexCharts(document.querySelector("#" + this.id), options);
             chart.render();
 
         },
