@@ -1,7 +1,9 @@
 <template lang="html">
     <div id="slideBarRight">
         <div class="slide special">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  laborum.</p>
+            <div id="apexRightSlideChart">
+                <ApexRadialChart :id="'apexRightSlideChart'"/>
+            </div>
         </div>
         <div class="slide">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim d minim veniam, quis nostrud  laborum.</p>
@@ -13,9 +15,14 @@
 </template>
 
 <script>
+    import ApexRadialChart from '../charts/ApexRadialChart';
+
     export default {
         name: 'SlideBarRight',
         props: [],
+        components: {
+            ApexRadialChart,
+        },
     }
 </script>
 

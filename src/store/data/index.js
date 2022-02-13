@@ -15,7 +15,10 @@ export default {
     },
     getters: {
         getData(state) {
-            return state.feedback;
+            return state.data;
+        },
+        getEmoji(state) {
+            return state.emoji;
         },
         getTotalCount(state) {
             // console.log(state.total_count);

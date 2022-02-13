@@ -7,21 +7,31 @@
 
     export default {
         name: 'ApexRadialChart',
-        props: ['id'],
+        props: ['id', 'data'],
         mounted() {
+            console.log(this.data);
+
+            // let keys = Object.keys(this.data);
+            // let result =  keys.sort(function(a,b){return this.data[b] - this.data[a]});
+
+            // let result = this.data?.sort((a, b) => (a.price > b.price ? -1 : 1))
+
+            // console.log(result);
+
+
             var options = {
                 series: [{
                         name: 'Desktops',
                         data: [{
-                                x: 'ABC',
-                                y: 10
+                                x: '❤️',
+                                y: 30
                             },
                             {
-                                x: 'DEF',
+                                x: '😳',
                                 y: 60
                             },
                             {
-                                x: 'XYZ',
+                                x: '🎯',
                                 y: 41
                             }
                         ]
@@ -29,27 +39,27 @@
                     {
                         name: 'Mobile',
                         data: [{
-                                x: 'ABCD',
+                                x: '😭',
                                 y: 10
                             },
                             {
-                                x: 'DEFG',
+                                x: '😈',
                                 y: 20
                             },
                             {
-                                x: 'WXYZ',
+                                x: '😢',
                                 y: 51
                             },
                             {
-                                x: 'PQR',
+                                x: '😍',
                                 y: 30
                             },
                             {
-                                x: 'MNO',
+                                x: '😆',
                                 y: 20
                             },
                             {
-                                x: 'CDE',
+                                x: '😄',
                                 y: 30
                             }
                         ]

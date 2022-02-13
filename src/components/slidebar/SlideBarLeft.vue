@@ -3,7 +3,7 @@
         <div class="slide charts">
             <h3>Un Titre ici</h3>
             <div id="apexLeftSlideChart">
-                <!-- <ApexBarChart :id="'apexLeftSlideChart'"/> -->
+                <ApexBarChart :id="'apexLeftSlideChart'"/>
             </div>
             <p>Une petite description ici, pour combler un peut le vide mais aussi pour expliquer un peut plus le graphs juste au dessus.</p>
         </div>
@@ -46,14 +46,14 @@
 </template>
 
 <script>
-    // import ApexBarChart from '../charts/ApexBarChart'
+    import ApexBarChart from '../charts/ApexBarChart'
     // import ApexLineChart from '../charts/ApexLineChart'
 
     export default {
         name: 'SlideBarRight',
         props: ['tweetMaxLike', 'tweetMaxRetweet', 'tweetMaxComment'],
         components: {
-            // ApexBarChart, /*ApexLineChart,*/
+            ApexBarChart, /*ApexLineChart,*/
         }
     }
 </script>

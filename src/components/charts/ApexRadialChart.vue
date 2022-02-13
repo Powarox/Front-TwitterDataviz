@@ -12,7 +12,7 @@
             let options = {
                 series: [44, 55, 67, 83],
                 chart: {
-                    height: 350,
+                    // height: 350,
                     type: 'radialBar',
                 },
                 plotOptions: {

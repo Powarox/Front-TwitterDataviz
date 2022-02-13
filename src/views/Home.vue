@@ -23,7 +23,7 @@
             </div>
 
             <div class="circle" id="apexMainChart3" v-if="chart3">
-                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'"/>
+                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'" :data="emoji()"/>
             </div>
 
             <SlideBarBottom :total-count="totalCount()"/>
@@ -59,7 +59,7 @@
         },
         methods: {
             ...mapGetters([
-                'getTotalCount', 'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment'
+                'getEmoji', 'getTotalCount', 'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment'
             ]),
             switchChartViews(chart) {
                 if(chart === 'chart1') {
@@ -80,6 +80,9 @@
             }
         },
         computed: {
+            emoji() {
+                return this.getEmoji;
+            },
             totalCount() {
                 return this.getTotalCount;
             },
