@@ -15,7 +15,7 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'"/>
+                <ApexRadialChart :id="'apexMainChart1'" :height="400"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">

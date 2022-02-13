@@ -7,12 +7,12 @@
 
     export default {
         name: 'ApexRadialChart',
-        props: ['id'],
+        props: ['id', 'height'],
         mounted() {
             let options = {
                 series: [44, 55, 67, 83],
                 chart: {
-                    // height: 350,
+                    height: this.height,
                     type: 'radialBar',
                 },
                 plotOptions: {

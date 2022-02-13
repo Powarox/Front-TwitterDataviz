@@ -2,7 +2,7 @@
     <div id="slideBarRight">
         <div class="slide special">
             <div id="apexRightSlideChart">
-                <ApexRadialChart :id="'apexRightSlideChart'"/>
+                <ApexRadialChart :id="'apexRightSlideChart'" :height="200"/>
             </div>
         </div>
         <div class="slide">
