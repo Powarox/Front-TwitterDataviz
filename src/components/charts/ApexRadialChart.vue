@@ -7,10 +7,22 @@
 
     export default {
         name: 'ApexRadialChart',
-        props: ['id', 'height'],
+        props: ['id', 'data', 'height'],
         mounted() {
+            console.log(this.data);
+
+            let like = this.data.Like;
+            let retweet = this.data.Retweet;
+            let comment = this.data.ReplyCount;
+            let quote = this.data.TweetQuote;
+
+            let count = like + retweet + comment + quote;
+
+            console.log(like, retweet, comment, quote);
+
             let options = {
-                series: [44, 55, 67, 83],
+                // series: [quote, comment, retweet, like],
+                series: [50, 50, 50, 50],
                 chart: {
                     height: this.height,
                     type: 'radialBar',
@@ -28,7 +40,7 @@
                                 show: true,
                                 label: 'Total',
                                 formatter: function() {
-                                    return 249
+                                    return count.toLocaleString('fr-FR');
                                 }
                             }
                         }

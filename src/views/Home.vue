@@ -15,7 +15,7 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'" :height="400"/>
+                <ApexRadialChart :id="'apexMainChart1'" :height="400" :data="totalCount()"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
@@ -29,7 +29,7 @@
             <SlideBarBottom :total-count="totalCount()"/>
         </main>
 
-        <SlideBarRight/>
+        <SlideBarRight :dataRadial="tweetMaxLike()"/>
     </div>
 </template>
 

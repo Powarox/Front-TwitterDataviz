@@ -44,33 +44,33 @@ export default {
             let total_count = {};
             let max_value_number = {};
 
-            total_count['tweet'] = 0;
-            total_count['like'] = 0;
-            total_count['quote'] = 0;
-            total_count['retweet'] = 0;
-            total_count['comment'] = 0;
+            total_count['Tweet'] = 0;
+            total_count['Like'] = 0;
+            total_count['TweetQuote'] = 0;
+            total_count['Retweet'] = 0;
+            total_count['ReplyCount'] = 0;
 
-            max_value_number['like'] = 0;
-            max_value_number['retweet'] = 0;
-            max_value_number['comment'] = 0;
+            max_value_number['Like'] = 0;
+            max_value_number['Retweet'] = 0;
+            max_value_number['ReplyCount'] = 0;
 
             for(let i in state.data){
-                total_count['tweet'] += 1;
-                total_count['like'] += state.data[i].Like;
-                total_count['quote'] += state.data[i].TweetQuote;
-                total_count['retweet'] += state.data[i].Retweet;
-                total_count['comment'] += state.data[i].ReplyCount;
+                total_count['Tweet'] += 1;
+                total_count['Like'] += state.data[i].Like;
+                total_count['TweetQuote'] += state.data[i].TweetQuote;
+                total_count['Retweet'] += state.data[i].Retweet;
+                total_count['ReplyCount'] += state.data[i].ReplyCount;
 
-                if(max_value_number['like'] < state.data[i].Like) {
-                    max_value_number['like'] = state.data[i].Like;
+                if(max_value_number['Like'] < state.data[i].Like) {
+                    max_value_number['Like'] = state.data[i].Like;
                     state.tweet_max_like = state.data[i];
                 }
-                if(max_value_number['retweet'] < state.data[i].Retweet) {
-                    max_value_number['retweet'] = state.data[i].Retweet;
+                if(max_value_number['Retweet'] < state.data[i].Retweet) {
+                    max_value_number['Retweet'] = state.data[i].Retweet;
                     state.tweet_max_retweet = state.data[i];
                 }
-                if(max_value_number['comment'] < state.data[i].ReplyCount) {
-                    max_value_number['comment'] = state.data[i].ReplyCount;
+                if(max_value_number['ReplyCount'] < state.data[i].ReplyCount) {
+                    max_value_number['ReplyCount'] = state.data[i].ReplyCount;
                     state.tweet_max_comment = state.data[i];
                 }
             }
