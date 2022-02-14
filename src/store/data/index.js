@@ -19,7 +19,7 @@ export default {
             return state.data;
         },
         getEmoji(state) {
-            return state.emoji;
+            return state.sorted_emoji;
         },
         getTotalCount(state) {
             return state.total_count;

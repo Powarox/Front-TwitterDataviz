@@ -23,7 +23,7 @@
             </div>
 
             <div class="circle" id="apexMainChart3" v-if="chart3">
-                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'" :data="emoji()"/>
+                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'" :height="175" :data="emoji()"/>
             </div>
 
             <SlideBarBottom :total-count="totalCount()"/>
