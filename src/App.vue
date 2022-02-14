@@ -8,10 +8,10 @@
 
             <input type="text" name="" value="">
 
-            <router-link to="/">Statistics</router-link>
-            <router-link to="/">Overviews</router-link>
-            <router-link to="/">Dashboard</router-link>
-            <router-link to="/">Analytics</router-link>
+            <router-link to="/" :class="{activeView: view1}" @click="switchViews('view1')">Dataset 1</router-link>
+            <router-link to="/" :class="{activeView: view2}" @click="switchViews('view2')">Dataset 2</router-link>
+            <router-link to="/" :class="{activeView: view3}" @click="switchViews('view3')">Dataset 3</router-link>
+            <router-link to="/" :class="{activeView: view4}" @click="switchViews('view4')">Dataset 4</router-link>
         </nav>
     </header>
 
@@ -28,6 +28,14 @@
         components: {
 
         },
+        data() {
+            return {
+                view1: true,
+                view2: false,
+                view3: false,
+                view4: false,
+            }
+        },
         created() {
             this.fetchData();
             this.parseData();
@@ -37,6 +45,32 @@
             ...mapActions([
                 'fetchData', 'parseData', 'parseEmoji',
             ]),
+            switchViews(chart) {
+                if(chart === 'view1') {
+                    this.view1 = true;
+                    this.view2 = false;
+                    this.view3 = false;
+                    this.view4 = false;
+                }
+                else if(chart === 'view2') {
+                    this.view1 = false;
+                    this.view2 = true;
+                    this.view3 = false;
+                    this.view4 = false;
+                }
+                else if(chart === 'view3') {
+                    this.view1 = false;
+                    this.view2 = false;
+                    this.view3 = true;
+                    this.view4 = false;
+                }
+                else {
+                    this.view1 = false;
+                    this.view2 = false;
+                    this.view3 = false;
+                    this.view4 = true;
+                }
+            }
         },
     }
 </script>
@@ -121,7 +155,13 @@
         border-bottom: 2px solid #EC8294;
     }
 
-    .header .nav a:focus {
+    .header .nav .activeView {
         color: #696B69;
+        border-bottom: 2px solid #EC8294;
     }
+
+    /* .header .nav a:focus {
+        color: #696B69;
+        border-bottom: 2px solid #EC8294;
+    } */
 </style>
