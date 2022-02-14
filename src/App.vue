@@ -31,10 +31,11 @@
         created() {
             this.fetchData();
             this.parseData();
+            this.parseEmoji();
         },
         methods: {
             ...mapActions([
-                'fetchData', 'parseData',
+                'fetchData', 'parseData', 'parseEmoji',
             ]),
         },
     }

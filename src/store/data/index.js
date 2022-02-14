@@ -6,6 +6,7 @@ export default {
         return {
             data: {},
             emoji: {},
+            sorted_emoji: [],
 
             total_count: {},
             tweet_max_like: {},
@@ -21,7 +22,6 @@ export default {
             return state.emoji;
         },
         getTotalCount(state) {
-            // console.log(state.total_count);
             return state.total_count;
         },
         getTweetMaxLike(state) {
@@ -77,15 +77,40 @@ export default {
 
             commit('PARSEDATA', total_count);
         },
+        parseEmoji({commit, state}) {
+            let list = [];
+
+            for(let i in state.emoji) {
+                list.push({
+                    'emoji': i,
+                    'value': state.emoji[i]
+                })
+            }
+
+            const sorter = (a, b) => {
+               return b.value - a.value;
+            };
+
+            const sortByValue = arr => {
+               arr.sort(sorter);
+            };
+
+            sortByValue(list);
+            commit('PARSEEMOJI', list);
+        },
     },
     mutations: {
         UPDATEDATA(state, data) {
-            console.log(data);
+            console.log(data[0]);
+            console.log(data[1]);
             state.data = data[0];
             state.emoji = data[1];
         },
         PARSEDATA(state, total_count) {
             state.total_count = total_count;
+        },
+        PARSEEMOJI(state, list) {
+            state.sorted_emoji = list;
         },
     }
 }
