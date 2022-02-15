@@ -43,23 +43,34 @@ export default {
         parseData({commit, state}) {
             let total_count = {};
             let max_value_number = {};
-
-            total_count['Tweet'] = 0;
-            total_count['Like'] = 0;
-            total_count['TweetQuote'] = 0;
-            total_count['Retweet'] = 0;
-            total_count['ReplyCount'] = 0;
+            let current_date = '';
 
             max_value_number['Like'] = 0;
             max_value_number['Retweet'] = 0;
             max_value_number['ReplyCount'] = 0;
 
             for(let i in state.data){
-                total_count['Tweet'] += 1;
-                total_count['Like'] += state.data[i].Like;
-                total_count['TweetQuote'] += state.data[i].TweetQuote;
-                total_count['Retweet'] += state.data[i].Retweet;
-                total_count['ReplyCount'] += state.data[i].ReplyCount;
+                let s1 = state.data[i].date.split('(');
+                let parseDate = s1[1].split(',')[0] // + ' -' + s1[1].split(',')[1]
+
+                if(current_date === '' || current_date !== parseDate) {
+                    current_date = parseDate;
+                    total_count[current_date] = {
+                        'Tweet': 0,
+                        'Like': 0,
+                        'TweetQuote': 0,
+                        'Retweet': 0,
+                        'ReplyCount': 0,
+                    }
+                }
+                else {
+                    console.log(current_date);
+                    total_count[current_date].Tweet += 1;
+                    total_count[current_date].Like += state.data[i].Like;
+                    total_count[current_date].TweetQuote += state.data[i].TweetQuote;
+                    total_count[current_date].Retweet += state.data[i].Retweet;
+                    total_count[current_date].ReplyCount += state.data[i].ReplyCount;
+                }
 
                 if(max_value_number['Like'] < state.data[i].Like) {
                     max_value_number['Like'] = state.data[i].Like;
