@@ -7,16 +7,37 @@
 
     export default {
         name: 'ApexRadialChart',
-        props: ['id', 'data', 'height'],
+        props: ['id', 'data', 'choose', 'height'],
         mounted() {
-            let like = this.data.Like;
-            let retweet = this.data.Retweet;
-            let comment = this.data.ReplyCount;
-            let quote = this.data.TweetQuote;
-            let total = like + retweet + comment + quote;
+            let total = 0;
+            let years = [];
+            let values = [];
+
+            for(let i in this.data) {
+                years.push(i);
+                switch(this.choose) {
+                    case 'Like':
+                        values.push(this.data[i].Like);
+                        total += this.data[i].Like;
+                        break;
+                    case 'Retweet':
+                        values.push(this.data[i].Retweet);
+                        total += this.data[i].Retweet;
+                        break;
+                    case 'ReplyCount':
+                        values.push(this.data[i].ReplyCount);
+                        total += this.data[i].ReplyCount;
+                        break;
+                    default:
+                        break;
+                }
+            }
 
             let options = {
-                series: [like*100/total, retweet*100/total, comment*100/total, quote*100/total],
+                series: [
+                    (values[0]*100/total).toFixed(2), (values[1]*100/total).toFixed(2),
+                    (values[2]*100/total).toFixed(2), (values[3]*100/total).toFixed(2)
+                ],
                 chart: {
                     height: this.height,
                     type: 'radialBar',
@@ -32,7 +53,7 @@
                             },
                             total: {
                                 show: true,
-                                label: 'Total',
+                                label: 'Total ' + this.choose,
                                 formatter: function() {
                                     return total.toLocaleString('fr-FR');
                                 }
@@ -40,7 +61,7 @@
                         }
                     }
                 },
-                labels: ['Like', 'Retweet', 'comment', 'quote'],
+                labels: [years[0], years[1], years[2], years[3]],
             };
 
             let chart = new ApexCharts(document.querySelector("#" + this.id), options);

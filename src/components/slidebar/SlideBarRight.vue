@@ -4,7 +4,7 @@
             <h3>Un petit titre ici</h3>
 
             <div id="apexRightSlideChart">
-                <ApexRadialChart :id="'apexRightSlideChart'" :data="this.dataRadial" :height="200"/>
+                <!-- <ApexRadialChart :id="'apexRightSlideChart'" :data="'this.dataRadial'" :height="200"/> -->
             </div>
 
             <div class="item">
@@ -30,13 +30,13 @@
 </template>
 
 <script>
-    import ApexRadialChart from '../charts/ApexRadialChart';
+    // import ApexRadialChart from '../charts/ApexRadialChart';
 
     export default {
         name: 'SlideBarRight',
         props: ['dataRadial'],
         components: {
-            ApexRadialChart,
+            // ApexRadialChart,
         },
     }
 </script>

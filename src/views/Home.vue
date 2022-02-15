@@ -15,7 +15,7 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'" :height="400" :data="totalCount()"/>
+                <ApexRadialChart :id="'apexMainChart1'" :height="400" :choose="'ReplyCount'" :data="totalCountByDate()"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
@@ -59,7 +59,8 @@
         },
         methods: {
             ...mapGetters([
-                'getEmoji', 'getTotalCount', 'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment'
+                'getEmoji', 'getTotalCount', 'getTotalCountByDate',
+                'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment',
             ]),
             switchChartViews(chart) {
                 if(chart === 'chart1') {
@@ -85,6 +86,9 @@
             },
             totalCount() {
                 return this.getTotalCount;
+            },
+            totalCountByDate(){
+                return this.getTotalCountByDate;
             },
             tweetMaxLike() {
                 return this.getTweetMaxLike;
