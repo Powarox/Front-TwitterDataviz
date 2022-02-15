@@ -16,16 +16,16 @@
                 <h4 :class="{activeChart: chart3}" @click="switchChartViews('chart3')">Chart 3</h4>
             </div>
 
-            <div class="circle" id="apexMainChart1" v-if="chart1">
+            <div class="circle" id="apexMainChart3" v-if="chart1">
+                <ApexTreeMapChart :id="'apexMainChart3'" :height="175" :data="emoji()"/>
+            </div>
+
+            <div class="circle" id="apexMainChart1" v-if="chart2">
                 <ApexRadialChart :id="'apexMainChart1'" :choose="'Like'" :data="totalCountByDate()" :height="400" :font-size="20"/>
             </div>
 
-            <div class="circle" id="apexMainChart2" v-if="chart2">
-                <ApexBarChart v-if="chart2" :id="'apexMainChart2'" :data="totalCountByDate()"/>
-            </div>
-
-            <div class="circle" id="apexMainChart3" v-if="chart3">
-                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'" :height="175" :data="emoji()"/>
+            <div class="circle" id="apexMainChart2" v-if="chart3">
+                <ApexBarChart :id="'apexMainChart2'" :data="totalCountByDate()"/>
             </div>
 
             <SlideBarBottom :total-count="totalCount()"/>

@@ -4,7 +4,7 @@ import Dataset1 from '../views/Dataset1.vue';
 import Dataset2 from '../views/Dataset2.vue';
 import Dataset3 from '../views/Dataset3.vue';
 import Dataset4 from '../views/Dataset4.vue';
-// import NotFound from '../views/NotFound.vue';
+import NotFound from '../views/NotFound.vue';
 
 const routes = [
     {
@@ -39,14 +39,14 @@ const routes = [
             title: 'Twitter Dataviz : Kylian Mbappé',
         }
     },
-    // {
-    //     name: 'NotFound',
-    //     path: '/:pathMatch(.*)',
-    //     component: NotFound,
-    //     meta: {
-    //         title: '404 Not Found',
-    //     }
-    // }
+    {
+        name: 'NotFound',
+        path: '/:pathMatch(.*)',
+        component: NotFound,
+        meta: {
+            title: '404 Not Found',
+        }
+    }
 ]
 
 const router = createRouter({

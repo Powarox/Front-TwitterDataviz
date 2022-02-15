@@ -14,7 +14,7 @@
                     <p>{{ this.description.club}}</p>
                     <p>{{ this.description.followers}}</p>
                     <p>{{ this.description.sub}}</p>
-                    <p>{{ this.totalCount.Tweet}}</p>
+                    <p>{{ this.totalCount.Tweet.toLocaleString('en-EN')}}</p>
                 </div>
             </div>
             <p>{{ this.description.text }}</p>

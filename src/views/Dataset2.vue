@@ -16,16 +16,16 @@
                 <h4 :class="{activeChart: chart3}" @click="switchChartViews('chart3')">Chart 3</h4>
             </div>
 
-            <div class="circle" id="apexMainChart1" v-if="chart1">
+            <div class="circle" id="apexMainChart2" v-if="chart1">
+                <ApexBarChart :id="'apexMainChart2'" :data="totalCountByDate()"/>
+            </div>
+
+            <div class="circle" id="apexMainChart3" v-if="chart2">
+                <ApexTreeMapChart :id="'apexMainChart3'" :height="175" :data="emoji()"/>
+            </div>
+
+            <div class="circle" id="apexMainChart1" v-if="chart3">
                 <ApexRadialChart :id="'apexMainChart1'" :choose="'Like'" :data="totalCountByDate()" :height="400" :font-size="20"/>
-            </div>
-
-            <div class="circle" id="apexMainChart2" v-if="chart2">
-                <ApexBarChart v-if="chart2" :id="'apexMainChart2'" :data="totalCountByDate()"/>
-            </div>
-
-            <div class="circle" id="apexMainChart3" v-if="chart3">
-                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'" :height="175" :data="emoji()"/>
             </div>
 
             <SlideBarBottom :total-count="totalCount()"/>
@@ -63,7 +63,7 @@
                 description: {
                     'title': 'Cristiano Ronaldo',
                     'img': 'dataset2',
-                    'club': 'MAN UTD',
+                    'club': 'MAN',
                     'followers': '97,4 M',
                     'sub': '60',
                     'text': 'Portuguese footballer, born February 5, 1985 in Funchal',

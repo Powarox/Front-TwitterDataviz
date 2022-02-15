@@ -21,11 +21,11 @@
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
-                <ApexBarChart v-if="chart2" :id="'apexMainChart2'" :data="totalCountByDate()"/>
+                <ApexBarChart :id="'apexMainChart2'" :data="totalCountByDate()"/>
             </div>
 
             <div class="circle" id="apexMainChart3" v-if="chart3">
-                <ApexTreeMapChart v-if="chart3" :id="'apexMainChart3'" :height="175" :data="emoji()"/>
+                <ApexTreeMapChart :id="'apexMainChart3'" :height="175" :data="emoji()"/>
             </div>
 
             <SlideBarBottom :total-count="totalCount()"/>
@@ -136,17 +136,14 @@
 
 <style lang="css" scoped>
     #dataset1 {
-        /* padding: 20px 30px; */
         padding: 25px 80px;
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         grid-gap: 50px;
-        /* grid-gap: 20px; */
         background: #F9F9F9;
     }
 
     .center {
-        /* height: 84vh; */
         padding: 10px 0;
         display: flex;
         flex-direction: column;
@@ -168,7 +165,6 @@
     .center .switchCharts h4 {
         padding: 7px;
         border-radius: 10px;
-        /* box-shadow:  0 0 3px #CCC; */
         transition: 0.4s;
         cursor: pointer;
     }
