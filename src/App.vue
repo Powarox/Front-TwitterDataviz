@@ -98,7 +98,7 @@
     .header .nav {
         padding: 10px;
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1.5fr 3fr 1fr 1fr 1fr 1fr;
         align-items: center;
         justify-items: center;
     }
@@ -107,7 +107,7 @@
         padding-bottom: 5px;
         display: flex;
         align-items: center;
-        border-bottom: 2px solid #FFF;
+        border-bottom: 2px solid #FFFFFF;
         transition: 0.4s;
         cursor: pointer;
     }
@@ -147,6 +147,7 @@
         color: #C3C3C0;
         border-bottom: 1px solid #FFF;
         text-decoration: none;
+        font-size: 20px;
         transition: 0.4s;
     }
 

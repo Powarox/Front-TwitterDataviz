@@ -68,8 +68,7 @@ export default {
             max_value_number['ReplyCount'] = 0;
 
             for(let i in state.data){
-                let s1 = state.data[i].date.split('(');
-                let parseDate = s1[1].split(',')[0];
+                let parseDate = state.data[i].Date.split('-')[0];
 
                 if(current_date === '' || current_date !== parseDate) {
                     current_date = parseDate;

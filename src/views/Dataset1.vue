@@ -31,7 +31,9 @@
             <SlideBarBottom :total-count="totalCount()"/>
         </main>
 
-        <SlideBarRight :dataRadial="totalCountByDate()"/>
+        <SlideBarRight
+            :total-count="totalCount()"
+            :dataRadial="totalCountByDate()"/>
     </div>
 </template>
 
@@ -134,13 +136,13 @@
 
 <style lang="css" scoped>
     #dataset1 {
-        padding: 25px 30px;
+        padding: 20px 30px;
         /* padding: 25px 80px; */
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         /* grid-gap: 50px; */
         grid-gap: 20px;
-        background: #FAFAFA;
+        background: #F9F9F9;
     }
 
     .center {

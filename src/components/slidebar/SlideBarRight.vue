@@ -1,6 +1,6 @@
 <template lang="html">
     <div id="slideBarRight">
-        <div class="slide chart">
+        <div class="slide chart special">
             <h3>Some statistics</h3>
 
             <div id="apexRightSlideChart">
@@ -12,23 +12,41 @@
                 <p>{{ item.Tweet }}</p>
             </div>
         </div>
-        <div class="slide special">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim d minim veniam, quis nostrud  laborum.</p>
-        </div>
         <div class="slide">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim d minim veniam, quis nostrud  laborum.</p>
+            <p>Total Tweet since : 2012</p>
+            <h2>3 222 444 <span>(2002)</span></h2>
+            <p>un petit truc juste ici</p>
         </div>
+
+        <div class="slide chart special">
+            <h3>Some Statistics</h3>
+            <br>
+            <ApexLineChart/>
+        </div>
+
+        <!-- <div class="slide disclaimer special">
+            <p>All the data present in this application is public and comes directly from the official Twitter accounts of the players.</p>
+            <div class="bottomBar"></div>
+            <p>They were retrieved through a Python script using the Snscrape library which is used to crawl data directly from Twitter.</p>
+        </div>
+        <div class="slide disclaimer special">
+            <p>All the data present in this application is public and comes directly from the official Twitter accounts of the players.</p>
+        </div>
+        <div class="slide disclaimer special">
+            <p>They were retrieved through a Python script using the Snscrape library which is used to crawl data directly from Twitter.</p>
+        </div> -->
     </div>
 </template>
 
 <script>
+    import ApexLineChart from '../charts/ApexLineChart';
     import ApexRadialChart from '../charts/ApexRadialChart';
 
     export default {
         name: 'SlideBarRight',
-        props: ['dataRadial'],
+        props: ['totalCount', 'dataRadial'],
         components: {
-            ApexRadialChart,
+            ApexRadialChart, ApexLineChart,
         },
     }
 </script>
@@ -48,8 +66,8 @@
     }
 
     .special {
-        color: #DDD;
-        background: #8674FE;
+        color: #111;
+        background: #A89BFF;
     }
 
     .chart h3 {
@@ -66,5 +84,14 @@
 
     .chart .item .left {
         display: grid;
+    }
+
+    .disclaimer {
+        text-align: justify;
+    }
+
+    .disclaimer .bottomBar {
+        margin: 5px 0;
+        border-bottom: 1px solid #AAA;
     }
 </style>
