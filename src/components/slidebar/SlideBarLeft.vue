@@ -3,8 +3,6 @@
         <div class="slide description">
             <h3>{{ this.description.title}}</h3>
             <img :src="getImgUrl(this.description.img)" alt="Portrait Twitter Account">
-            <!-- <img src="../../assets/dataset2.png" alt="Portrait Twitter Account"> -->
-            <!-- <img src="../../assets/dataset3.png" alt="Portrait Twitter Account"> -->
             <div class="bottom">
                 <div class="item">
                     <p>Club : </p>
@@ -65,13 +63,9 @@
         props: ['description', 'totalCount', 'tweetMaxLike', 'tweetMaxRetweet', 'tweetMaxComment'],
         methods: {
             getImgUrl(pic) {
-                console.log(pic);
                 return require('../../assets/' + pic + '.png');
             },
         },
-        computed: {
-
-        }
     }
 </script>
 

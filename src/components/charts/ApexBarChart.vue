@@ -25,8 +25,8 @@
 
             let options = {
                 series: [{
-                    name: 'Quote',
-                    data: quote
+                    name: 'Like',
+                    data: like
                 }, {
                     name: 'Retweet',
                     data: retweet

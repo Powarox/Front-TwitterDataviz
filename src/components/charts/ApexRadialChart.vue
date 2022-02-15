@@ -43,12 +43,11 @@
                 }
             }
 
-            console.log(max);
-
             let options = {
                 series: [
                     (values[0]*100/max).toFixed(2), (values[1]*100/max).toFixed(2),
-                    (values[2]*100/max).toFixed(2), (values[3]*100/max).toFixed(2)
+                    (values[2]*100/max).toFixed(2), (values[3]*100/max).toFixed(2),
+                    (values[3]*100/max).toFixed(2)
                 ],
                 chart: {
                     height: this.height,
@@ -74,7 +73,7 @@
                         }
                     }
                 },
-                labels: [years[0], years[1], years[2], years[3]],
+                labels: [years[0], years[1], years[2], years[3], years[4]],
             };
 
             let chart = new ApexCharts(document.querySelector("#" + this.id), options);
