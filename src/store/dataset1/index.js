@@ -1,5 +1,5 @@
-import localJsonData from '../../data/data.json';
-import localJsonEmoji from '../../data/emoji.json';
+import localJsonData from '../../data/dataset1/data.json';
+import localJsonEmoji from '../../data/dataset1/emoji.json';
 
 export default {
     state() {
