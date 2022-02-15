@@ -17,7 +17,7 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'" :height="400" :choose="'Like'" :data="totalCountByDate()"/>
+                <ApexRadialChart :id="'apexMainChart1'" :choose="'Like'" :data="totalCountByDate()" :height="400" :font-size="20"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
@@ -31,7 +31,7 @@
             <SlideBarBottom :total-count="totalCount()"/>
         </main>
 
-        <SlideBarRight :dataRadial="tweetMaxLike()"/>
+        <SlideBarRight :dataRadial="totalCountByDate()"/>
     </div>
 </template>
 
@@ -138,7 +138,8 @@
         /* padding: 25px 80px; */
         display: grid;
         grid-template-columns: 250px 1fr 250px;
-        grid-gap: 50px;
+        /* grid-gap: 50px; */
+        grid-gap: 20px;
         background: #FAFAFA;
     }
 

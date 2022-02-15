@@ -1,23 +1,15 @@
 <template lang="html">
     <div id="slideBarRight">
         <div class="slide chart">
-            <h3>Un petit titre ici</h3>
+            <h3>Some statistics</h3>
 
             <div id="apexRightSlideChart">
-                <!-- <ApexRadialChart :id="'apexRightSlideChart'" :data="'this.dataRadial'" :height="200"/> -->
+                <ApexRadialChart :id="'apexRightSlideChart'" :choose="'Retweet'" :data="dataRadial" :height="200" :font-size="12"/>
             </div>
 
-            <div class="item">
-                <div class="left">
-                    <p>dedede fefe</p>
-                    <p>dedede fefe</p>
-                    <p>dedede fefe</p>
-                </div>
-                <div class="right">
-                    <p>dedede fefe</p>
-                    <p>dedede fefe</p>
-                    <p>dedede fefe</p>
-                </div>
+            <div class="item" v-for="(item, id) in this.dataRadial" v-bind:key="item.Tweet">
+                <p>Tweet {{ id }}</p>
+                <p>{{ item.Tweet }}</p>
             </div>
         </div>
         <div class="slide special">
@@ -30,13 +22,13 @@
 </template>
 
 <script>
-    // import ApexRadialChart from '../charts/ApexRadialChart';
+    import ApexRadialChart from '../charts/ApexRadialChart';
 
     export default {
         name: 'SlideBarRight',
         props: ['dataRadial'],
         components: {
-            // ApexRadialChart,
+            ApexRadialChart,
         },
     }
 </script>
@@ -60,14 +52,19 @@
         background: #8674FE;
     }
 
-    .chart {
+    .chart h3 {
         text-align: center;
     }
 
     .chart .item {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
+        display: flex;
+        justify-content: space-between;
+        /* grid-template-columns: 1fr 1fr; */
+        /* justify-items: left; */
         align-items: center;
+    }
+
+    .chart .item .left {
+        display: grid;
     }
 </style>

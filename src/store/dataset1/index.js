@@ -69,16 +69,16 @@ export default {
 
             for(let i in state.data){
                 let s1 = state.data[i].date.split('(');
-                let parseDate = s1[1].split(',')[0] // + ' -' + s1[1].split(',')[1]
+                let parseDate = s1[1].split(',')[0];
 
                 if(current_date === '' || current_date !== parseDate) {
                     current_date = parseDate;
                     total_count_by_date[current_date] = {
-                        'Tweet': 0,
-                        'Like': 0,
-                        'TweetQuote': 0,
-                        'Retweet': 0,
-                        'ReplyCount': 0,
+                        'Tweet': 1,
+                        'Like': state.data[i].Like,
+                        'TweetQuote': state.data[i].TweetQuote,
+                        'Retweet': state.data[i].Retweet,
+                        'ReplyCount': state.data[i].ReplyCount,
                     }
                 }
                 else {
