@@ -9,6 +9,8 @@ export default {
             sorted_emoji: [],
 
             total_count: {},
+            total_count_by_date: {},
+
             tweet_max_like: {},
             tweet_max_retweet: {},
             tweet_max_comment: {},
@@ -23,6 +25,9 @@ export default {
         },
         getTotalCount(state) {
             return state.total_count;
+        },
+        getTotalCountByDate(state) {
+            return state.total_count_by_date;
         },
         getTweetMaxLike(state) {
             return state.tweet_max_like;
@@ -41,9 +46,22 @@ export default {
             commit('UPDATEDATA', [data, emoji]);
         },
         parseData({commit, state}) {
-            let total_count = {};
-            let max_value_number = {};
             let current_date = '';
+            let total_count_by_date = {};
+
+            let total_count = {
+                'Tweet': 0,
+                'Like': 0,
+                'TweetQuote': 0,
+                'Retweet': 0,
+                'ReplyCount': 0,
+            }
+
+            let max_value_number = {
+                'Like': 0,
+                'Retweet': 0,
+                'ReplyCount': 0,
+            };
 
             max_value_number['Like'] = 0;
             max_value_number['Retweet'] = 0;
@@ -55,7 +73,7 @@ export default {
 
                 if(current_date === '' || current_date !== parseDate) {
                     current_date = parseDate;
-                    total_count[current_date] = {
+                    total_count_by_date[current_date] = {
                         'Tweet': 0,
                         'Like': 0,
                         'TweetQuote': 0,
@@ -64,13 +82,18 @@ export default {
                     }
                 }
                 else {
-                    console.log(current_date);
-                    total_count[current_date].Tweet += 1;
-                    total_count[current_date].Like += state.data[i].Like;
-                    total_count[current_date].TweetQuote += state.data[i].TweetQuote;
-                    total_count[current_date].Retweet += state.data[i].Retweet;
-                    total_count[current_date].ReplyCount += state.data[i].ReplyCount;
+                    total_count_by_date[current_date].Tweet += 1;
+                    total_count_by_date[current_date].Like += state.data[i].Like;
+                    total_count_by_date[current_date].TweetQuote += state.data[i].TweetQuote;
+                    total_count_by_date[current_date].Retweet += state.data[i].Retweet;
+                    total_count_by_date[current_date].ReplyCount += state.data[i].ReplyCount;
                 }
+
+                total_count.Tweet += 1;
+                total_count.Like += state.data[i].Like;
+                total_count.TweetQuote += state.data[i].TweetQuote;
+                total_count.Retweet += state.data[i].Retweet;
+                total_count.ReplyCount += state.data[i].ReplyCount;
 
                 if(max_value_number['Like'] < state.data[i].Like) {
                     max_value_number['Like'] = state.data[i].Like;
@@ -86,7 +109,7 @@ export default {
                 }
             }
 
-            commit('PARSEDATA', total_count);
+            commit('PARSEDATA', [total_count, total_count_by_date]);
         },
         parseEmoji({commit, state}) {
             let list = [];
@@ -117,8 +140,11 @@ export default {
             state.data = data[0];
             state.emoji = data[1];
         },
-        PARSEDATA(state, total_count) {
-            state.total_count = total_count;
+        PARSEDATA(state, list) {
+            console.log(list[0]);
+            console.log(list[1]);
+            state.total_count = list[0];
+            state.total_count_by_date = list[1];
         },
         PARSEEMOJI(state, list) {
             state.sorted_emoji = list;
