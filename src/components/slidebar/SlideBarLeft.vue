@@ -1,17 +1,25 @@
 <template lang="html">
     <div id="slideBarRight">
         <div class="slide description">
-            <h3>Kylian Mbappé</h3>
-            <img src="../../assets/dataset1.png" alt="Portrait Twitter Account">
-            <div class="">
-                <p>Club : PSG</p>
-                <!-- <p>Abonnées : 7,2 M</p>
-                <p>Abonnements : 107</p>
-                <p>Total Tweet : 11 000</p> -->
-                <p>7,2 M - Abonnées</p>
-                <p>107 - Abonnements</p>
-                <p>11 000 - Tweets Postés</p>
+            <h3>{{ this.description.title}}</h3>
+            <img :src="getImgUrl(this.description.img)" alt="Portrait Twitter Account">
+            <!-- <img src="../../assets/dataset2.png" alt="Portrait Twitter Account"> -->
+            <!-- <img src="../../assets/dataset3.png" alt="Portrait Twitter Account"> -->
+            <div class="bottom">
+                <div class="item">
+                    <p>Club : </p>
+                    <p>Follers :</p>
+                    <p>Subscribers :</p>
+                    <p>Tweets Posted :</p>
+                </div>
+                <div class="item">
+                    <p>{{ this.description.club}}</p>
+                    <p>{{ this.description.followers}}</p>
+                    <p>{{ this.description.sub}}</p>
+                    <p>{{ this.totalCount.Tweet.toLocaleString('fr-FR')}}</p>
+                </div>
             </div>
+            <p>{{ this.description.text }}</p>
         </div>
         <div class="slide tweet">
             <h3>Most Liked Tweet</h3>
@@ -54,7 +62,16 @@
 <script>
     export default {
         name: 'SlideBarRight',
-        props: ['tweetMaxLike', 'tweetMaxRetweet', 'tweetMaxComment'],
+        props: ['description', 'totalCount', 'tweetMaxLike', 'tweetMaxRetweet', 'tweetMaxComment'],
+        methods: {
+            getImgUrl(pic) {
+                console.log(pic);
+                return require('../../assets/' + pic + '.png');
+            },
+        },
+        computed: {
+
+        }
     }
 </script>
 
@@ -81,6 +98,13 @@
         margin: 10px auto;
         display: flex;
         border-radius: 10px;
+    }
+
+    .description .bottom {
+        margin: 0 15px 5px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
     }
 
     .tweet {

@@ -1,6 +1,8 @@
 <template lang="html">
     <div id="dataset1">
         <SlideBarLeft
+            :description="description"
+            :total-count="totalCount()"
             :tweet-max-like="tweetMaxLike()"
             :tweet-max-retweet="tweetMaxRetweet()"
             :tweet-max-comment="tweetMaxComment()"/>
@@ -55,6 +57,33 @@
                 chart1: true,
                 chart2: false,
                 chart3: false,
+
+                // description: {
+                //     'title': 'Kylian Mbappé',
+                //     'img': 'dataset1',
+                //     'club': 'PSG',
+                //     'followers': '7,2 M',
+                //     'sub': '107',
+                //     'text': 'French footballer, born December 20, 1998 in Paris',
+                // },
+
+                description: {
+                    'title': 'Cristiano Ronaldo',
+                    'img': 'dataset2',
+                    'club': 'MAN UTD',
+                    'followers': '97,4 M',
+                    'sub': '60',
+                    'text': 'Portuguese footballer, born February 5, 1985 in Funchal',
+                },
+
+                // description: {
+                //     'title': 'Neymar Jr',
+                //     'img': 'dataset3',
+                //     'club': 'PSG',
+                //     'followers': '9 M',
+                //     'sub': '631',
+                //     'text': 'Brazilian footballer, born February 5, 1992 in Mogi Cruzes',
+                // }
             }
         },
         methods: {
@@ -78,7 +107,7 @@
                     this.chart2 = false;
                     this.chart3 = true;
                 }
-            }
+            },
         },
         computed: {
             emoji() {
@@ -136,7 +165,7 @@
     .center .switchCharts h4 {
         padding: 7px;
         border-radius: 10px;
-        /* box-shadow: 0 0 10px #CCC; */
+        /* box-shadow:  0 0 3px #CCC; */
         transition: 0.4s;
         cursor: pointer;
     }
