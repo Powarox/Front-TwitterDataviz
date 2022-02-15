@@ -9,9 +9,9 @@
             <input type="text" name="" value="">
 
             <router-link to="/" :class="{activeView: view1}" @click="switchViews('view1')">Dataset 1</router-link>
-            <router-link to="/" :class="{activeView: view2}" @click="switchViews('view2')">Dataset 2</router-link>
-            <router-link to="/" :class="{activeView: view3}" @click="switchViews('view3')">Dataset 3</router-link>
-            <router-link to="/" :class="{activeView: view4}" @click="switchViews('view4')">Dataset 4</router-link>
+            <router-link to="/Dataset2" :class="{activeView: view2}" @click="switchViews('view2')">Dataset 2</router-link>
+            <router-link to="/Dataset3" :class="{activeView: view3}" @click="switchViews('view3')">Dataset 3</router-link>
+            <router-link to="/Dataset4" :class="{activeView: view4}" @click="switchViews('view4')">Dataset 4</router-link>
         </nav>
     </header>
 
@@ -40,10 +40,20 @@
             this.fetchData();
             this.parseData();
             this.parseEmoji();
+
+            this.fetchData2();
+            this.parseData2();
+            this.parseEmoji2();
+
+            this.fetchData3();
+            this.parseData3();
+            this.parseEmoji3();
         },
         methods: {
             ...mapActions([
                 'fetchData', 'parseData', 'parseEmoji',
+                'fetchData2', 'parseData2', 'parseEmoji2',
+                'fetchData3', 'parseData3', 'parseEmoji3',
             ]),
             switchViews(chart) {
                 if(chart === 'view1') {

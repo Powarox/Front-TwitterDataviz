@@ -99,17 +99,17 @@ export default {
                 total_count.Retweet += state.data2[i].Retweet;
                 total_count.ReplyCount += state.data2[i].ReplyCount;
 
-                if(max_value_number.Like < state.dat2a[i].Like) {
+                if(max_value_number.Like < state.data2[i].Like) {
                     max_value_number.Like = state.data2[i].Like;
-                    state.tweet_max_like = state.data2[i];
+                    state.tweet_max_like2 = state.data2[i];
                 }
                 if(max_value_number.Retweet < state.data2[i].Retweet) {
                     max_value_number.Retweet = state.data2[i].Retweet;
-                    state.tweet_max_retweet = state.data2[i];
+                    state.tweet_max_retweet2 = state.data2[i];
                 }
                 if(max_value_number.ReplyCount < state.data2[i].ReplyCount) {
                     max_value_number.ReplyCount = state.data2[i].ReplyCount;
-                    state.tweet_max_comment = state.data2[i];
+                    state.tweet_max_comment2 = state.data2[i];
                 }
             }
 
@@ -139,10 +139,14 @@ export default {
     },
     mutations: {
         UPDATEDATA2(state, data) {
+            console.log(data[0]);
+            console.log(data[1]);
             state.data2 = data[0];
             state.emoji2 = data[1];
         },
         PARSEDATA2(state, list) {
+            console.log(list[0]);
+            console.log(list[1]);
             state.total_count2 = list[0];
             state.total_count_by_date2 = list[1];
         },

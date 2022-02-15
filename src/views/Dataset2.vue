@@ -1,6 +1,8 @@
 <template lang="html">
     <div id="dataset2">
         <SlideBarLeft
+            :description="description"
+            :total-count="totalCount()"
             :tweet-max-like="tweetMaxLike()"
             :tweet-max-retweet="tweetMaxRetweet()"
             :tweet-max-comment="tweetMaxComment()"/>
@@ -15,7 +17,7 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'" :height="400" :choose="'Like'" :data="totalCountByDate()"/>
+                <ApexRadialChart :id="'apexMainChart1'" :choose="'Like'" :data="totalCountByDate()" :height="400" :font-size="20"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
@@ -29,7 +31,9 @@
             <SlideBarBottom :total-count="totalCount()"/>
         </main>
 
-        <SlideBarRight :dataRadial="tweetMaxLike()"/>
+        <SlideBarRight
+            :total-count="totalCount()"
+            :dataRadial="totalCountByDate()"/>
     </div>
 </template>
 
@@ -55,12 +59,21 @@
                 chart1: true,
                 chart2: false,
                 chart3: false,
+
+                description: {
+                    'title': 'Cristiano Ronaldo',
+                    'img': 'dataset2',
+                    'club': 'MAN UTD',
+                    'followers': '97,4 M',
+                    'sub': '60',
+                    'text': 'Portuguese footballer, born February 5, 1985 in Funchal',
+                },
             }
         },
         methods: {
             ...mapGetters([
-                'getEmoji', 'getTotalCount', 'getTotalCountByDate',
-                'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment',
+                'getEmoji2', 'getTotalCount2', 'getTotalCountByDate2',
+                'getTweetMaxLike2', 'getTweetMaxRetweet2', 'getTweetMaxComment2',
             ]),
             switchChartViews(chart) {
                 if(chart === 'chart1') {
@@ -78,26 +91,26 @@
                     this.chart2 = false;
                     this.chart3 = true;
                 }
-            }
+            },
         },
         computed: {
             emoji() {
-                return this.getEmoji;
+                return this.getEmoji2;
             },
             totalCount() {
-                return this.getTotalCount;
+                return this.getTotalCount2;
             },
             totalCountByDate(){
-                return this.getTotalCountByDate;
+                return this.getTotalCountByDate2;
             },
             tweetMaxLike() {
-                return this.getTweetMaxLike;
+                return this.getTweetMaxLike2;
             },
             tweetMaxRetweet() {
-                return this.getTweetMaxRetweet;
+                return this.getTweetMaxRetweet2;
             },
             tweetMaxComment() {
-                return this.getTweetMaxComment;
+                return this.getTweetMaxComment2;
             },
         }
     }
@@ -105,16 +118,14 @@
 
 <style lang="css" scoped>
     #dataset2 {
-        padding: 25px 30px;
-        /* padding: 25px 80px; */
+        padding: 25px 80px;
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         grid-gap: 50px;
-        background: #FAFAFA;
+        background: #F9F9F9;
     }
 
     .center {
-        /* height: 84vh; */
         padding: 10px 0;
         display: flex;
         flex-direction: column;
@@ -136,7 +147,6 @@
     .center .switchCharts h4 {
         padding: 7px;
         border-radius: 10px;
-        /* box-shadow: 0 0 10px #CCC; */
         transition: 0.4s;
         cursor: pointer;
     }

@@ -1,7 +1,7 @@
 <template lang="html">
     <div id="slideBarRight">
         <div class="slide description">
-            <h3>{{ this.description.title}}</h3>
+            <h3>{{ this.description.title }}</h3>
             <img :src="getImgUrl(this.description.img)" alt="Portrait Twitter Account">
             <div class="bottom">
                 <div class="item">
@@ -14,7 +14,7 @@
                     <p>{{ this.description.club}}</p>
                     <p>{{ this.description.followers}}</p>
                     <p>{{ this.description.sub}}</p>
-                    <p>{{ this.totalCount.Tweet.toLocaleString('en-EN')}}</p>
+                    <p>{{ this.totalCount.Tweet}}</p>
                 </div>
             </div>
             <p>{{ this.description.text }}</p>
@@ -45,14 +45,6 @@
                     <h4>{{ this.tweetMaxLike.ReplyCount.toLocaleString('en-EN') }}</h4>
                 </div>
             </div>
-
-            <!-- <div class="item">
-                <i class="fas fa-align-justify"></i>
-                <div class="content">
-                    <span>Content : </span>
-                </div>
-            </div>
-            <p>{{ this.tweetMaxLike.Content }}</p> -->
         </div>
     </div>
 </template>

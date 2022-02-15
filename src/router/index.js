@@ -20,7 +20,7 @@ const routes = [
         name: 'Dataset2',
         component: Dataset2,
         meta: {
-            title: 'Twitter Dataviz : Kylian Mbappé',
+            title: 'Twitter Dataviz : Cristiano Ronaldo',
         }
     },
     {
@@ -28,7 +28,7 @@ const routes = [
         name: 'Dataset3',
         component: Dataset3,
         meta: {
-            title: 'Twitter Dataviz : Kylian Mbappé',
+            title: 'Twitter Dataviz : Neymar Jr',
         }
     },
     {

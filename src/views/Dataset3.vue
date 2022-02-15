@@ -1,6 +1,8 @@
 <template lang="html">
-    <div id="dataset1">
+    <div id="dataset3">
         <SlideBarLeft
+            :description="description"
+            :total-count="totalCount()"
             :tweet-max-like="tweetMaxLike()"
             :tweet-max-retweet="tweetMaxRetweet()"
             :tweet-max-comment="tweetMaxComment()"/>
@@ -15,7 +17,7 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'" :height="400" :choose="'Like'" :data="totalCountByDate()"/>
+                <ApexRadialChart :id="'apexMainChart1'" :choose="'Like'" :data="totalCountByDate()" :height="400" :font-size="20"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
@@ -29,7 +31,9 @@
             <SlideBarBottom :total-count="totalCount()"/>
         </main>
 
-        <SlideBarRight :dataRadial="tweetMaxLike()"/>
+        <SlideBarRight
+            :total-count="totalCount()"
+            :dataRadial="totalCountByDate()"/>
     </div>
 </template>
 
@@ -45,7 +49,7 @@
     import ApexTreeMapChart from '../components/charts/ApexTreeMapChart';
 
     export default {
-        name: 'Dataset1',
+        name: 'Dataset3',
         components: {
             SlideBarLeft, SlideBarRight, SlideBarBottom,
             ApexRadialChart, ApexBarChart, ApexTreeMapChart,
@@ -55,12 +59,21 @@
                 chart1: true,
                 chart2: false,
                 chart3: false,
+
+                description: {
+                    'title': 'Neymar Jr',
+                    'img': 'dataset3',
+                    'club': 'PSG',
+                    'followers': '9 M',
+                    'sub': '631',
+                    'text': 'Brazilian footballer, born February 5, 1992 in Mogi Cruzes',
+                }
             }
         },
         methods: {
             ...mapGetters([
-                'getEmoji', 'getTotalCount', 'getTotalCountByDate',
-                'getTweetMaxLike', 'getTweetMaxRetweet', 'getTweetMaxComment',
+                'getEmoji3', 'getTotalCount3', 'getTotalCountByDate3',
+                'getTweetMaxLike3', 'getTweetMaxRetweet3', 'getTweetMaxComment3',
             ]),
             switchChartViews(chart) {
                 if(chart === 'chart1') {
@@ -78,26 +91,26 @@
                     this.chart2 = false;
                     this.chart3 = true;
                 }
-            }
+            },
         },
         computed: {
             emoji() {
-                return this.getEmoji;
+                return this.getEmoji3;
             },
             totalCount() {
-                return this.getTotalCount;
+                return this.getTotalCount3;
             },
             totalCountByDate(){
-                return this.getTotalCountByDate;
+                return this.getTotalCountByDate3;
             },
             tweetMaxLike() {
-                return this.getTweetMaxLike;
+                return this.getTweetMaxLike3;
             },
             tweetMaxRetweet() {
-                return this.getTweetMaxRetweet;
+                return this.getTweetMaxRetweet3;
             },
             tweetMaxComment() {
-                return this.getTweetMaxComment;
+                return this.getTweetMaxComment3;
             },
         }
     }
@@ -105,16 +118,14 @@
 
 <style lang="css" scoped>
     #dataset3 {
-        padding: 25px 30px;
-        /* padding: 25px 80px; */
+        padding: 25px 80px;
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         grid-gap: 50px;
-        background: #FAFAFA;
+        background: #F9F9F9;
     }
 
     .center {
-        /* height: 84vh; */
         padding: 10px 0;
         display: flex;
         flex-direction: column;
@@ -136,7 +147,6 @@
     .center .switchCharts h4 {
         padding: 7px;
         border-radius: 10px;
-        /* box-shadow: 0 0 10px #CCC; */
         transition: 0.4s;
         cursor: pointer;
     }
