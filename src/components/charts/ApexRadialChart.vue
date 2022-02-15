@@ -67,7 +67,7 @@
                                 fontSize: this.fontSize,
                                 label: 'Total ' + this.choose,
                                 formatter: function() {
-                                    return total.toLocaleString('fr-FR');
+                                    return total.toLocaleString('en-EN');
                                 }
                             }
                         }

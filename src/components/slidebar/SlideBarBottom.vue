@@ -4,7 +4,7 @@
             <i class="fas fa-heart"></i>
             <div class="content">
                 <span>Total Like</span>
-                <p>{{ this.totalCount.Like.toLocaleString('fr-FR') }}</p>
+                <p>{{ this.totalCount.Like.toLocaleString('en-EN') }}</p>
             </div>
         </div>
 
@@ -12,7 +12,7 @@
             <i class="fas fa-retweet"></i>
             <div class="content">
                 <span>Total Retweet</span>
-                <p>{{ this.totalCount.Retweet.toLocaleString('fr-FR') }}</p>
+                <p>{{ this.totalCount.Retweet.toLocaleString('en-EN') }}</p>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <div class="content">
                 <span>Total Comment</span>
                 <!-- <span>Total Tweet</span> -->
-                <p>{{ this.totalCount.ReplyCount.toLocaleString('fr-FR') }}</p>
+                <p>{{ this.totalCount.ReplyCount.toLocaleString('en-EN') }}</p>
             </div>
         </div>
     </div>

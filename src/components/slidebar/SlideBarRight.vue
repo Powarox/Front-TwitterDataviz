@@ -4,7 +4,7 @@
             <h3>Some statistics</h3>
 
             <div id="apexRightSlideChart1">
-                <ApexRadialChart :id="'apexRightSlideChart1'" :choose="'Retweet'" :data="dataRadial" :height="200" :font-size="12"/>
+                <ApexRadialChart :id="'apexRightSlideChart1'" :choose="'Retweet'" :data="dataRadial" :height="230" :font-size="14"/>
             </div>
 
             <!-- <div class="item" v-for="(item, id) in this.dataRadial" v-bind:key="item.Tweet">
@@ -13,15 +13,14 @@
             </div> -->
         </div>
 
-        <div class="slide">
-            <p>Total Tweet since : 2012</p>
-            <h2>3 222 444 <span>(2002)</span></h2>
-            <p>un petit truc juste ici</p>
+        <div class="slide info">
+            <p>Total Tweets</p>
+            <h2>{{ this.totalCount.Tweet.toLocaleString('en-EN') }}  <span>({{ this.totalCount.Date }})</span></h2>
+            <span>Total number of tweets since {{ this.totalCount.Date }}</span>
         </div>
 
         <div class="slide chart special">
             <h3>Some Statistics</h3>
-            <br>
             <div id="apexRightSlideChart2">
                 <ApexLineChart :id="'apexRightSlideChart2'" :data="dataRadial" :height="210"/>
             </div>
@@ -68,12 +67,19 @@
         border-radius: 10px;
     }
 
+    .info span {
+        color: #6D6969;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
     .special {
         color: #111;
         background: #A89BFF;
     }
 
     .chart h3 {
+        margin-bottom: 5px;
         text-align: center;
     }
 
@@ -85,16 +91,4 @@
         align-items: center;
     }
 
-    .chart .item .left {
-        display: grid;
-    }
-
-    .disclaimer {
-        text-align: justify;
-    }
-
-    .disclaimer .bottomBar {
-        margin: 5px 0;
-        border-bottom: 1px solid #AAA;
-    }
 </style>

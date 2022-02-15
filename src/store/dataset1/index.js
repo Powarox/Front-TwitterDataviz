@@ -50,6 +50,7 @@ export default {
             let total_count_by_date = {};
 
             let total_count = {
+                'date': '',
                 'Tweet': 0,
                 'Like': 0,
                 'TweetQuote': 0,
@@ -86,6 +87,10 @@ export default {
                     total_count_by_date[current_date].TweetQuote += state.data[i].TweetQuote;
                     total_count_by_date[current_date].Retweet += state.data[i].Retweet;
                     total_count_by_date[current_date].ReplyCount += state.data[i].ReplyCount;
+                }
+
+                if(total_count.Data === undefined || total_count.Data > parseInt(current_date)) {
+                    total_count.Date = current_date;
                 }
 
                 total_count.Tweet += 1;

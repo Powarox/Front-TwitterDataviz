@@ -14,7 +14,7 @@
                     <p>{{ this.description.club}}</p>
                     <p>{{ this.description.followers}}</p>
                     <p>{{ this.description.sub}}</p>
-                    <p>{{ this.totalCount.Tweet.toLocaleString('fr-FR')}}</p>
+                    <p>{{ this.totalCount.Tweet.toLocaleString('en-EN')}}</p>
                 </div>
             </div>
             <p>{{ this.description.text }}</p>
@@ -26,7 +26,7 @@
                 <i class="fas fa-heart"></i>
                 <div class="content">
                     <span>Like</span>
-                    <h4>{{ this.tweetMaxLike.Like.toLocaleString('fr-FR') }}</h4>
+                    <h4>{{ this.tweetMaxLike.Like.toLocaleString('en-EN') }}</h4>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                 <i class="fas fa-retweet"></i>
                 <div class="content">
                     <span>Retweet</span>
-                    <h4>{{ this.tweetMaxLike.Retweet.toLocaleString('fr-FR') }}</h4>
+                    <h4>{{ this.tweetMaxLike.Retweet.toLocaleString('en-EN') }}</h4>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                 <i class="fas fa-comments"></i>
                 <div class="content">
                     <span>Comments</span>
-                    <h4>{{ this.tweetMaxLike.ReplyCount.toLocaleString('fr-FR') }}</h4>
+                    <h4>{{ this.tweetMaxLike.ReplyCount.toLocaleString('en-EN') }}</h4>
                 </div>
             </div>
 
