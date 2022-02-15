@@ -9,18 +9,30 @@
 
     export default {
         name: 'ApexLineChart',
+        props: ['id', 'data', 'height'],
         mounted() {
+            let years = [];
+            let like = [];
+            let retweet = [];
+
+            for(let i in this.data) {
+                years.push(i);
+                like.push(this.data[i].Like/10000);
+                retweet.push(this.data[i].Retweet/10000);
+            }
+
+
             var options = {
                 series: [{
-                    name: 'series1',
-                    data: [31, 40, 28, 51, 42, 109, 100]
+                    name: 'Like',
+                    data: like
                 }, {
-                    name: 'series2',
-                    data: [11, 32, 45, 32, 34, 52, 41]
+                    name: 'Retweet',
+                    data: retweet
                 }],
                 chart: {
-                    // height: 350,
-                    type: 'area'
+                    height: this.height,
+                    // type: 'area'
                 },
                 dataLabels: {
                     enabled: false
@@ -30,16 +42,16 @@
                 },
                 xaxis: {
                     type: 'datetime',
-                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                    categories: years
                 },
                 tooltip: {
                     x: {
-                        format: 'dd/MM/yy HH:mm'
+                        format: 'yy'
                     },
                 },
             };
 
-            let chart = new ApexCharts(document.querySelector("#apexLineChart"), options);
+            let chart = new ApexCharts(document.querySelector("#" + this.id), options);
             chart.render();
         },
     }

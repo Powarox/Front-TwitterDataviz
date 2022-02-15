@@ -3,15 +3,16 @@
         <div class="slide chart special">
             <h3>Some statistics</h3>
 
-            <div id="apexRightSlideChart">
-                <ApexRadialChart :id="'apexRightSlideChart'" :choose="'Retweet'" :data="dataRadial" :height="200" :font-size="12"/>
+            <div id="apexRightSlideChart1">
+                <ApexRadialChart :id="'apexRightSlideChart1'" :choose="'Retweet'" :data="dataRadial" :height="200" :font-size="12"/>
             </div>
 
-            <div class="item" v-for="(item, id) in this.dataRadial" v-bind:key="item.Tweet">
+            <!-- <div class="item" v-for="(item, id) in this.dataRadial" v-bind:key="item.Tweet">
                 <p>Tweet {{ id }}</p>
                 <p>{{ item.Tweet }}</p>
-            </div>
+            </div> -->
         </div>
+
         <div class="slide">
             <p>Total Tweet since : 2012</p>
             <h2>3 222 444 <span>(2002)</span></h2>
@@ -21,7 +22,9 @@
         <div class="slide chart special">
             <h3>Some Statistics</h3>
             <br>
-            <ApexLineChart/>
+            <div id="apexRightSlideChart2">
+                <ApexLineChart :id="'apexRightSlideChart2'" :data="dataRadial" :height="210"/>
+            </div>
         </div>
 
         <!-- <div class="slide disclaimer special">

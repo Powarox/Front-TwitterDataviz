@@ -60,23 +60,23 @@
                 chart2: false,
                 chart3: false,
 
-                // description: {
-                //     'title': 'Kylian Mbappé',
-                //     'img': 'dataset1',
-                //     'club': 'PSG',
-                //     'followers': '7,2 M',
-                //     'sub': '107',
-                //     'text': 'French footballer, born December 20, 1998 in Paris',
-                // },
-
                 description: {
-                    'title': 'Cristiano Ronaldo',
-                    'img': 'dataset2',
-                    'club': 'MAN UTD',
-                    'followers': '97,4 M',
-                    'sub': '60',
-                    'text': 'Portuguese footballer, born February 5, 1985 in Funchal',
+                    'title': 'Kylian Mbappé',
+                    'img': 'dataset1',
+                    'club': 'PSG',
+                    'followers': '7,2 M',
+                    'sub': '107',
+                    'text': 'French footballer, born December 20, 1998 in Paris',
                 },
+
+                // description: {
+                //     'title': 'Cristiano Ronaldo',
+                //     'img': 'dataset2',
+                //     'club': 'MAN UTD',
+                //     'followers': '97,4 M',
+                //     'sub': '60',
+                //     'text': 'Portuguese footballer, born February 5, 1985 in Funchal',
+                // },
 
                 // description: {
                 //     'title': 'Neymar Jr',
@@ -136,12 +136,12 @@
 
 <style lang="css" scoped>
     #dataset1 {
-        padding: 20px 30px;
-        /* padding: 25px 80px; */
+        /* padding: 20px 30px; */
+        padding: 25px 80px;
         display: grid;
         grid-template-columns: 250px 1fr 250px;
-        /* grid-gap: 50px; */
-        grid-gap: 20px;
+        grid-gap: 50px;
+        /* grid-gap: 20px; */
         background: #F9F9F9;
     }
 

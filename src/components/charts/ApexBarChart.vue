@@ -56,11 +56,6 @@
                 xaxis: {
                     categories: years,
                 },
-                // yaxis: {
-                //     title: {
-                //         text: '$ (thousands)'
-                //     }
-                // },
                 fill: {
                     opacity: 1
                 },
