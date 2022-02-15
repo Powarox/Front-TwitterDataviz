@@ -30,7 +30,7 @@
                 <i class="fas fa-comments"></i>
                 <div class="content">
                     <span>Comments</span>
-                    <!-- <h4>{{ this.tweetMaxLike.ReplyCount.toLocaleString('fr-FR') }}</h4> -->
+                    <h4>{{ this.tweetMaxLike.ReplyCount.toLocaleString('fr-FR') }}</h4>
                 </div>
             </div>
 

@@ -95,16 +95,16 @@ export default {
                 total_count.Retweet += state.data[i].Retweet;
                 total_count.ReplyCount += state.data[i].ReplyCount;
 
-                if(max_value_number['Like'] < state.data[i].Like) {
-                    max_value_number['Like'] = state.data[i].Like;
+                if(max_value_number.Like < state.data[i].Like) {
+                    max_value_number.Like = state.data[i].Like;
                     state.tweet_max_like = state.data[i];
                 }
-                if(max_value_number['Retweet'] < state.data[i].Retweet) {
-                    max_value_number['Retweet'] = state.data[i].Retweet;
+                if(max_value_number.Retweet < state.data[i].Retweet) {
+                    max_value_number.Retweet = state.data[i].Retweet;
                     state.tweet_max_retweet = state.data[i];
                 }
-                if(max_value_number['ReplyCount'] < state.data[i].ReplyCount) {
-                    max_value_number['ReplyCount'] = state.data[i].ReplyCount;
+                if(max_value_number.ReplyCount < state.data[i].ReplyCount) {
+                    max_value_number.ReplyCount = state.data[i].ReplyCount;
                     state.tweet_max_comment = state.data[i];
                 }
             }
