@@ -1,15 +1,42 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import Home from '../views/Home.vue';
+import Dataset1 from '../views/Dataset1.vue';
+import Dataset2 from '../views/Dataset2.vue';
+import Dataset3 from '../views/Dataset3.vue';
+import Dataset4 from '../views/Dataset4.vue';
 // import NotFound from '../views/NotFound.vue';
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home,
+        name: 'Dataset1',
+        component: Dataset1,
         meta: {
-            title: 'Wallet - Accueil',
+            title: 'Twitter Dataviz : Kylian Mbappé',
+        }
+    },
+    {
+        path: '/Dataset2',
+        name: 'Dataset2',
+        component: Dataset2,
+        meta: {
+            title: 'Twitter Dataviz : Kylian Mbappé',
+        }
+    },
+    {
+        path: '/Dataset3',
+        name: 'Dataset3',
+        component: Dataset3,
+        meta: {
+            title: 'Twitter Dataviz : Kylian Mbappé',
+        }
+    },
+    {
+        path: '/Dataset4',
+        name: 'Dataset4',
+        component: Dataset4,
+        meta: {
+            title: 'Twitter Dataviz : Kylian Mbappé',
         }
     },
     // {

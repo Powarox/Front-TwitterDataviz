@@ -1,5 +1,5 @@
 <template lang="html">
-    <div id="home">
+    <div id="dataset1">
         <SlideBarLeft
             :tweet-max-like="tweetMaxLike()"
             :tweet-max-retweet="tweetMaxRetweet()"
@@ -15,11 +15,11 @@
             </div>
 
             <div class="circle" id="apexMainChart1" v-if="chart1">
-                <ApexRadialChart :id="'apexMainChart1'" :height="400" :choose="'ReplyCount'" :data="totalCountByDate()"/>
+                <ApexRadialChart :id="'apexMainChart1'" :height="400" :choose="'Like'" :data="totalCountByDate()"/>
             </div>
 
             <div class="circle" id="apexMainChart2" v-if="chart2">
-                <ApexBarChart v-if="chart2" :id="'apexMainChart2'"/>
+                <ApexBarChart v-if="chart2" :id="'apexMainChart2'" :data="totalCountByDate()"/>
             </div>
 
             <div class="circle" id="apexMainChart3" v-if="chart3">
@@ -45,7 +45,7 @@
     import ApexTreeMapChart from '../components/charts/ApexTreeMapChart';
 
     export default {
-        name: 'Home',
+        name: 'Dataset1',
         components: {
             SlideBarLeft, SlideBarRight, SlideBarBottom,
             ApexRadialChart, ApexBarChart, ApexTreeMapChart,
@@ -104,7 +104,7 @@
 </script>
 
 <style lang="css" scoped>
-    #home {
+    #dataset1 {
         padding: 25px 30px;
         /* padding: 25px 80px; */
         display: grid;

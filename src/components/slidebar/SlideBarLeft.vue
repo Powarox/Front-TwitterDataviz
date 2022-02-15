@@ -1,11 +1,17 @@
 <template lang="html">
     <div id="slideBarRight">
-        <div class="slide charts">
-            <h3>Un Titre ici</h3>
-            <div id="apexLeftSlideChart">
-                <ApexBarChart :id="'apexLeftSlideChart'"/>
+        <div class="slide description">
+            <h3>Kylian Mbappé</h3>
+            <img src="../../assets/dataset1.png" alt="Portrait Twitter Account">
+            <div class="">
+                <p>Club : PSG</p>
+                <!-- <p>Abonnées : 7,2 M</p>
+                <p>Abonnements : 107</p>
+                <p>Total Tweet : 11 000</p> -->
+                <p>7,2 M - Abonnées</p>
+                <p>107 - Abonnements</p>
+                <p>11 000 - Tweets Postés</p>
             </div>
-            <p>Une petite description ici, pour combler un peut le vide mais aussi pour expliquer un peut plus le graphs juste au dessus.</p>
         </div>
         <div class="slide tweet">
             <h3>Most Liked Tweet</h3>
@@ -46,15 +52,9 @@
 </template>
 
 <script>
-    import ApexBarChart from '../charts/ApexBarChart'
-    // import ApexLineChart from '../charts/ApexLineChart'
-
     export default {
         name: 'SlideBarRight',
         props: ['tweetMaxLike', 'tweetMaxRetweet', 'tweetMaxComment'],
-        components: {
-            ApexBarChart, /*ApexLineChart,*/
-        }
     }
 </script>
 
@@ -72,9 +72,15 @@
         border-radius: 10px;
     }
 
-    .charts div {
+    .description {
         box-sizing: border-box;
-        height: 100px;
+    }
+
+    .description img {
+        width: 180px;
+        margin: 10px auto;
+        display: flex;
+        border-radius: 10px;
     }
 
     .tweet {

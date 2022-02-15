@@ -7,18 +7,32 @@
 
     export default {
         name: 'ApexBarChart',
-        props: ['id'],
+        props: ['id', 'data', 'height'],
         mounted() {
+            let years = [];
+            let like = [];
+            let quote = [];
+            let retweet = [];
+            let comment = [];
+
+            for(let i in this.data) {
+                years.push(i);
+                like.push(this.data[i].Like);
+                quote.push(this.data[i].TweetQuote);
+                retweet.push(this.data[i].Retweet);
+                comment.push(this.data[i].ReplyCount);
+            }
+
             let options = {
                 series: [{
-                    name: 'A',
-                    data: [44, 55, 57, 56, 61]
+                    name: 'Quote',
+                    data: quote
                 }, {
-                    name: 'B',
-                    data: [76, 85, 101, 98, 87]
+                    name: 'Retweet',
+                    data: retweet
                 }, {
-                    name: 'C',
-                    data: [35, 41, 36, 26, 45]
+                    name: 'Comment',
+                    data: comment
                 }],
                 chart: {
                     type: 'bar',
@@ -40,7 +54,7 @@
                     colors: ['transparent']
                 },
                 xaxis: {
-                    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    categories: years,
                 },
                 // yaxis: {
                 //     title: {
@@ -53,7 +67,7 @@
                 tooltip: {
                     y: {
                         formatter: function(val) {
-                            return "$ " + val + " thousands"
+                            return val.toLocaleString('fr-FR');
                         }
                     }
                 }
