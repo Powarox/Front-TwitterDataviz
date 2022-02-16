@@ -136,7 +136,7 @@
 
 <style lang="css" scoped>
     #dataset1 {
-        padding: 25px 80px;
+        padding: 23px 80px;
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         grid-gap: 50px;
