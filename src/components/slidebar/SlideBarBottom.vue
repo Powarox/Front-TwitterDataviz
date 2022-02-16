@@ -20,7 +20,6 @@
             <i class="fas fa-comments"></i>
             <div class="content">
                 <span>Total Comment</span>
-                <!-- <span>Total Tweet</span> -->
                 <p>{{ this.totalCount.ReplyCount.toLocaleString('en-EN') }}</p>
             </div>
         </div>
