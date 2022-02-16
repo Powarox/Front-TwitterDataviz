@@ -25,9 +25,6 @@
 
     export default {
         name: 'App',
-        components: {
-
-        },
         data() {
             return {
                 view1: true,
