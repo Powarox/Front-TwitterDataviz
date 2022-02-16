@@ -50,7 +50,6 @@
                 chart: {
                     width: 275,
                     height: 275,
-                    // height: this.height,
                     type: 'treemap'
                 },
                 title: {

@@ -32,13 +32,11 @@
                 }],
                 chart: {
                     height: this.height,
-                    // type: 'area'
                 },
                 dataLabels: {
                     enabled: false
                 },
                 stroke: {
-                    // curve: 'smooth'
                 },
                 xaxis: {
                     type: 'datetime',
