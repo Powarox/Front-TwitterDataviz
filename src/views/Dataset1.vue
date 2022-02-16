@@ -68,24 +68,6 @@
                     'sub': '107',
                     'text': 'French footballer, born December 20, 1998 in Paris',
                 },
-
-                // description: {
-                //     'title': 'Cristiano Ronaldo',
-                //     'img': 'dataset2',
-                //     'club': 'MAN UTD',
-                //     'followers': '97,4 M',
-                //     'sub': '60',
-                //     'text': 'Portuguese footballer, born February 5, 1985 in Funchal',
-                // },
-
-                // description: {
-                //     'title': 'Neymar Jr',
-                //     'img': 'dataset3',
-                //     'club': 'PSG',
-                //     'followers': '9 M',
-                //     'sub': '631',
-                //     'text': 'Brazilian footballer, born February 5, 1992 in Mogi Cruzes',
-                // }
             }
         },
         methods: {
