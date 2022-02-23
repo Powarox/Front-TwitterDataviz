@@ -1,5 +1,7 @@
 # dataviz-twitter-vuejs
 
+Annual Project
+
 ## Project setup
 ```
 npm install
