@@ -9,38 +9,43 @@
         name: 'ApexRadialChart',
         props: ['id', 'data', 'choose', 'height', 'fontSize'],
         mounted() {
+            let data = this.data;
             let total = 0;
             let years = [];
             let values = [];
             let max = 0;
+            let stop = 0;
 
             for(let i in this.data) {
-                years.push(i);
-                switch(this.choose) {
-                    case 'Like':
-                        values.push(this.data[i].Like);
-                        total += this.data[i].Like;
-                        if(this.data[i].Like > max){
-                            max = this.data[i].Like;
-                        }
-                        break;
-                    case 'Retweet':
-                        values.push(this.data[i].Retweet);
-                        total += this.data[i].Retweet;
-                        if(this.data[i].Retweet > max){
-                            max = this.data[i].Retweet;
-                        }
-                        break;
-                    case 'ReplyCount':
-                        values.push(this.data[i].ReplyCount);
-                        total += this.data[i].ReplyCount;
-                        if(this.data[i].ReplyCount > max){
-                            max = this.data[i].ReplyCount;
-                        }
-                        break;
-                    default:
-                        break;
+                if(stop >= 4) {
+                    years.push(i);
+                    switch(this.choose) {
+                        case 'Like':
+                            values.push(this.data[i].Like);
+                            total += this.data[i].Like;
+                            if(this.data[i].Like > max){
+                                max = this.data[i].Like;
+                            }
+                            break;
+                        case 'Retweet':
+                            values.push(this.data[i].Retweet);
+                            total += this.data[i].Retweet;
+                            if(this.data[i].Retweet > max){
+                                max = this.data[i].Retweet;
+                            }
+                            break;
+                        case 'ReplyCount':
+                            values.push(this.data[i].ReplyCount);
+                            total += this.data[i].ReplyCount;
+                            if(this.data[i].ReplyCount > max){
+                                max = this.data[i].ReplyCount;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
+                stop++;
             }
 
             let options = {
