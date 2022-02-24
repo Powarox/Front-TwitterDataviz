@@ -139,14 +139,14 @@ export default {
     },
     mutations: {
         UPDATEDATA2(state, data) {
-            console.log(data[0]);
-            console.log(data[1]);
+            // console.log(data[0]);
+            // console.log(data[1]);
             state.data2 = data[0];
             state.emoji2 = data[1];
         },
         PARSEDATA2(state, list) {
-            console.log(list[0]);
-            console.log(list[1]);
+            // console.log(list[0]);
+            // console.log(list[1]);
             state.total_count2 = list[0];
             state.total_count_by_date2 = list[1];
         },
