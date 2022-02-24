@@ -9,7 +9,6 @@
         name: 'ApexRadialChart',
         props: ['id', 'data', 'choose', 'height', 'fontSize'],
         mounted() {
-            let data = this.data;
             let total = 0;
             let years = [];
             let values = [];
