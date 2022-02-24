@@ -15,8 +15,6 @@
             let max = 0;
             let stop = 0;
 
-            console.log(this.data);
-
             for(let i in this.data) {
                 if(stop >= 4) {
                     years.push(i);
