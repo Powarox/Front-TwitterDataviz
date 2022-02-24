@@ -13,10 +13,11 @@
             let years = [];
             let values = [];
             let max = 0;
-            let stop = 0;
+            let stop = true;
 
             for(let i in this.data) {
-                if(stop >= 4) {
+                if(i === '2017' || stop === false) {
+                    stop = false;
                     years.push(i);
                     switch(this.choose) {
                         case 'Like':
@@ -44,7 +45,6 @@
                             break;
                     }
                 }
-                stop++;
             }
 
             let options = {
